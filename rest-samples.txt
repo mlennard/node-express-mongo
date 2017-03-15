@@ -1,0 +1,2 @@
+{"author" : "Author patched!", "genre" : "Non-Fiction"} // Content-type:application-json
+https://movie-stalker-cloned-mlennard.c9users.io/api/books/58c810c73e472c0ed071d973
