@@ -1,10 +1,10 @@
 var express = require("express");
 
 var routes = function(Book){
-  var bookRouter = express.Router();
-  var bookController = require("../controllers/bookController")(Book);    
+    var bookRouter = express.Router();
+    var bookController = require("../controllers/bookController")(Book);    
+        
     
-
     bookRouter.route('/')
         .post(bookController.post)
         .get(bookController.get);
@@ -21,11 +21,17 @@ var routes = function(Book){
                 }   
             });
     });
-    
         
+            
     bookRouter.route('/:bookId')    
         .get(function(req, res){
-            res.json(req.book);
+            
+            var returnBook = req.book.toJSON();
+            
+            returnBook.links = {};
+            returnBook.links.filterByThisGenre = encodeURI('http://' + req.headers.host + '/api/books/?genre=' + returnBook.genre);
+            
+            res.json(returnBook);
             
         })
         .put(function(req, res){
