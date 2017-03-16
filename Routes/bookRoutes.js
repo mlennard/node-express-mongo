@@ -57,7 +57,7 @@ var routes = function(Book){
                 
         })
         .patch(function(req, res){
-            //TODO pq el delete?
+            // As we won't update the _id we have to delete that from the body because it's already set on the req.book.
             if(req.body._id)
                 delete req.body._id;
             

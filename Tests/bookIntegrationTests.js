@@ -6,8 +6,6 @@ var should = require("should"),
     Book = mongoose.model("Book"),
     agent = request.agent(app);
 
-//TODO que es o para que sirve el done?
-    
 describe("Book CRUD test", function(){
     it("Should allow a book to be posted and return at least a read and _id", function(done){
         //The object defined for testing purposes
@@ -24,7 +22,7 @@ describe("Book CRUD test", function(){
                  // _Id means the book has been saved.
                  results.body.should.have.property("_id");
                  
-                 // Let supertest know to move to the other execution
+                 // Let mocha know to move to the other execution
                  done();
              });
 
