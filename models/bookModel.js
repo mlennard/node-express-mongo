@@ -1,3 +1,4 @@
+// This file defines the schema linked to the Book collection stored on MongoDB
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
     
